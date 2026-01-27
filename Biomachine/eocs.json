@@ -1,0 +1,539 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIOMACHINE_TRAINING",
+    "condition": {
+      "or": [
+        {
+          "math": [
+            "u_stamina_last > u_val('stamina')"
+          ]
+        },
+        {
+          "math": [
+            "u_focus_last > u_val('focus')"
+          ]
+        }
+      ]
+    },
+    "effect": [
+      {
+        "math": [
+          "u_stamina_spent = max(u_stamina_last - u_val('stamina'), 0)"
+        ]
+      },
+      {
+        "math": [
+          "u_focus_spent = max(u_focus_last - u_val('focus'), 0)"
+        ]
+      },
+      {
+        "if": {
+          "u_has_trait": "STAMINA_POTENTIAL"
+        },
+        "then": [
+          {
+            "math": [
+              "u_stam_gain = u_stamina_spent * u_biomachine_eff_mult * 50"
+            ]
+          },
+          {
+            "if": {
+              "u_has_trait": "perk_stamina_bio_eff"
+            },
+            "then": [
+              {
+                "math": [
+                  "u_stam_gain += u_stam_gain / 10"
+                ]
+              }
+            ]
+          },
+          {
+            "math": [
+              "u_stamina_potential_int += u_stam_gain"
+            ]
+          }
+        ]
+      },
+      {
+        "if": {
+          "u_has_trait": "FOCUS_POTENTIAL"
+        },
+        "then": [
+          {
+            "math": [
+              "u_focus_gain = (u_focus_spent / 100) * u_biomachine_eff_mult"
+            ]
+          },
+          {
+            "if": {
+              "u_has_trait": "perk_focus_bio_eff"
+            },
+            "then": [
+              {
+                "math": [
+                  "u_focus_gain += u_focus_gain / 10"
+                ]
+              }
+            ]
+          },
+          {
+            "math": [
+              "u_focus_potential += u_focus_gain"
+            ]
+          }
+        ]
+      },
+      {
+        "if": {
+          "u_has_trait": "PHYSICAL_POTENTIAL"
+        },
+        "then": [
+          {
+            "math": [
+              "u_phys_stage = max(0, (u_val('strength_base') + u_phys_str_bonus + u_val('dexterity_base') + u_phys_dex_bonus) - 1)"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_gain = u_stamina_spent * u_phys_coeff_base_scaled * pow(1 + (u_phys_coeff_rise_scaled/1000), u_phys_stage)"
+            ]
+          },
+          {
+            "if": {
+              "u_has_trait": "perk_physical_bio_eff"
+            },
+            "then": [
+              {
+                "math": [
+                  "u_phys_gain += u_phys_gain / 10"
+                ]
+              }
+            ]
+          },
+          {
+            "math": [
+              "u_phys_progress_int += u_phys_gain"
+            ]
+          },
+          {
+            "run_eocs": "EOC_PHYSICAL_POTENTIAL_CHECK"
+          }
+        ]
+      },
+      {
+        "if": {
+          "u_has_trait": "MIND_POTENTIAL"
+        },
+        "then": [
+          {
+            "math": [
+              "u_mind_stage = max(0, (u_val('intelligence_base') + u_mind_int_bonus + u_val('perception_base') + u_mind_per_bonus) - 1)"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_gain = u_focus_spent * u_mind_coeff_base_scaled * pow(1 + (u_mind_coeff_rise_scaled/1000), u_mind_stage)"
+            ]
+          },
+          {
+            "if": {
+              "u_has_trait": "perk_mind_bio_eff"
+            },
+            "then": [
+              {
+                "math": [
+                  "u_mind_gain += u_mind_gain / 10"
+                ]
+              }
+            ]
+          },
+          {
+            "math": [
+              "u_mind_progress_int += u_mind_gain"
+            ]
+          },
+          {
+            "run_eocs": "EOC_MIND_POTENTIAL_CHECK"
+          }
+        ]
+      },
+      {
+        "math": [
+          "u_stamina_last = u_val('stamina')"
+        ]
+      },
+      {
+        "math": [
+          "u_focus_last = u_val('focus')"
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "math": [
+          "u_stamina_last = u_val('stamina')"
+        ]
+      },
+      {
+        "math": [
+          "u_focus_last = u_val('focus')"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_PHYSICAL_POTENTIAL_CHECK",
+    "condition": {
+      "and": [
+        {
+          "math": [
+            "u_phys_progress_int >= 100000000"
+          ]
+        },
+        {
+          "math": [
+            "u_phys_pending != 1"
+          ]
+        }
+      ]
+    },
+    "effect": [
+      {
+        "math": [
+          "u_phys_pending = 1"
+        ]
+      },
+      {
+        "open_dialogue": {
+          "topic": "TALK_BIOMACHINE_PHYS_READY"
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_PHYSICAL_POTENTIAL_APPLY_STR",
+    "effect": [
+      {
+        "math": [
+          "u_phys_str_bonus += 1"
+        ]
+      },
+      {
+        "math": [
+          "u_phys_progress_int -= 100000000"
+        ]
+      },
+      {
+        "math": [
+          "u_phys_pending = 0"
+        ]
+      },
+      {
+        "run_eocs": "EOC_PHYSICAL_POTENTIAL_CHECK",
+        "time_in_future": 0
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_PHYSICAL_POTENTIAL_APPLY_DEX",
+    "effect": [
+      {
+        "math": [
+          "u_phys_dex_bonus += 1"
+        ]
+      },
+      {
+        "math": [
+          "u_phys_progress_int -= 100000000"
+        ]
+      },
+      {
+        "math": [
+          "u_phys_pending = 0"
+        ]
+      },
+      {
+        "run_eocs": "EOC_PHYSICAL_POTENTIAL_CHECK",
+        "time_in_future": 0
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MIND_POTENTIAL_CHECK",
+    "condition": {
+      "and": [
+        {
+          "math": [
+            "u_mind_progress_int >= 100000000"
+          ]
+        },
+        {
+          "math": [
+            "u_mind_pending != 1"
+          ]
+        }
+      ]
+    },
+    "effect": [
+      {
+        "math": [
+          "u_mind_pending = 1"
+        ]
+      },
+      {
+        "open_dialogue": {
+          "topic": "TALK_BIOMACHINE_MIND_READY"
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MIND_POTENTIAL_APPLY_INT",
+    "effect": [
+      {
+        "math": [
+          "u_mind_int_bonus += 1"
+        ]
+      },
+      {
+        "math": [
+          "u_mind_progress_int -= 100000000"
+        ]
+      },
+      {
+        "math": [
+          "u_mind_pending = 0"
+        ]
+      },
+      {
+        "run_eocs": "EOC_MIND_POTENTIAL_CHECK",
+        "time_in_future": 0
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MIND_POTENTIAL_APPLY_PER",
+    "effect": [
+      {
+        "math": [
+          "u_mind_per_bonus += 1"
+        ]
+      },
+      {
+        "math": [
+          "u_mind_progress_int -= 100000000"
+        ]
+      },
+      {
+        "math": [
+          "u_mind_pending = 0"
+        ]
+      },
+      {
+        "run_eocs": "EOC_MIND_POTENTIAL_CHECK",
+        "time_in_future": 0
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIOMACHINE_INIT",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": {
+      "or": [
+        {
+          "u_has_trait": "STAMINA_POTENTIAL"
+        },
+        {
+          "u_has_trait": "PHYSICAL_POTENTIAL"
+        },
+        {
+          "u_has_trait": "MIND_POTENTIAL"
+        },
+        {
+          "u_has_trait": "FOCUS_POTENTIAL"
+        }
+      ]
+    },
+    "effect": [
+      {
+        "if": {
+          "math": [
+            "u_biomachine_initialized != 1"
+          ]
+        },
+        "then": [
+          {
+            "math": [
+              "u_biomachine_show_dialog = 1"
+            ]
+          },
+          {
+            "math": [
+              "u_biomachine_eff_mult = 1"
+            ]
+          },
+          {
+            "math": [
+              "u_biomachine_initialized = 1"
+            ]
+          },
+          {
+            "math": [
+              "u_stamina_potential_int = 0"
+            ]
+          }
+        ]
+      },
+      {
+        "if": {
+          "math": [
+            "u_phys_initialized != 1"
+          ]
+        },
+        "then": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 330"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_target = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_str_bonus = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_dex_bonus = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_progress_int = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_pending = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_initialized = 1"
+            ]
+          }
+        ]
+      },
+      {
+        "if": {
+          "math": [
+            "u_mind_initialized != 1"
+          ]
+        },
+        "then": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 330"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_target = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_int_bonus = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_per_bonus = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_progress_int = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_pending = 0"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_initialized = 1"
+            ]
+          }
+        ]
+      },
+      {
+        "if": {
+          "math": [
+            "u_biomachine_show_dialog == 1"
+          ]
+        },
+        "then": [
+          {
+            "open_dialogue": {
+              "topic": "TALK_BIOMACHINE_SETTINGS"
+            }
+          }
+        ]
+      },
+      {
+        "run_eocs": "EOC_BIOMACHINE_GIVE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIOMACHINE_GIVE_MENU",
+    "condition": {
+      "not": {
+        "u_has_trait": "BIOMACHINE_MENU"
+      }
+    },
+    "effect": [
+      {
+        "u_add_trait": "BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIOMACHINE_OPEN_MENU",
+    "effect": [
+      {
+        "open_dialogue": {
+          "topic": "TALK_BIOMACHINE_MENU"
+        }
+      }
+    ]
+  }
+]

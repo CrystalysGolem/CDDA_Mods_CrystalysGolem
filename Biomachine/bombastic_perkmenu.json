@@ -1,0 +1,196 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_MAIN",
+    "responses": [
+      {
+        "condition": {
+          "not": {
+            "u_has_trait": "perk_stamina_bio_eff"
+          }
+        },
+        "text": "Gain [<trait_name:perk_stamina_bio_eff>]",
+        "effect": [
+          {
+            "set_string_var": "<trait_name:perk_stamina_bio_eff>",
+            "target_var": {
+              "context_val": "trait_name"
+            }
+          },
+          {
+            "set_string_var": "<trait_description:perk_stamina_bio_eff>",
+            "target_var": {
+              "context_val": "trait_description"
+            }
+          },
+          {
+            "set_string_var": "perk_stamina_bio_eff",
+            "target_var": {
+              "context_val": "trait_id"
+            }
+          },
+          {
+            "set_string_var": "Requires Biomachine Stamina potential",
+            "target_var": {
+              "context_val": "trait_requirement_description"
+            }
+          },
+          {
+            "set_condition": "perk_condition",
+            "condition": {
+              "u_has_trait": "STAMINA_POTENTIAL"
+            }
+          },
+          {
+            "set_string_var": "+10% Stamina potential efficiency.",
+            "target_var": {
+              "context_val": "trait_additional_details"
+            }
+          }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT"
+      },
+      {
+        "condition": {
+          "not": {
+            "u_has_trait": "perk_focus_bio_eff"
+          }
+        },
+        "text": "Gain [<trait_name:perk_focus_bio_eff>]",
+        "effect": [
+          {
+            "set_string_var": "<trait_name:perk_focus_bio_eff>",
+            "target_var": {
+              "context_val": "trait_name"
+            }
+          },
+          {
+            "set_string_var": "<trait_description:perk_focus_bio_eff>",
+            "target_var": {
+              "context_val": "trait_description"
+            }
+          },
+          {
+            "set_string_var": "perk_focus_bio_eff",
+            "target_var": {
+              "context_val": "trait_id"
+            }
+          },
+          {
+            "set_string_var": "Requires Biomachine Focus potential",
+            "target_var": {
+              "context_val": "trait_requirement_description"
+            }
+          },
+          {
+            "set_condition": "perk_condition",
+            "condition": {
+              "u_has_trait": "FOCUS_POTENTIAL"
+            }
+          },
+          {
+            "set_string_var": "+10% Focus potential efficiency.",
+            "target_var": {
+              "context_val": "trait_additional_details"
+            }
+          }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT"
+      },
+      {
+        "condition": {
+          "not": {
+            "u_has_trait": "perk_physical_bio_eff"
+          }
+        },
+        "text": "Gain [<trait_name:perk_physical_bio_eff>]",
+        "effect": [
+          {
+            "set_string_var": "<trait_name:perk_physical_bio_eff>",
+            "target_var": {
+              "context_val": "trait_name"
+            }
+          },
+          {
+            "set_string_var": "<trait_description:perk_physical_bio_eff>",
+            "target_var": {
+              "context_val": "trait_description"
+            }
+          },
+          {
+            "set_string_var": "perk_physical_bio_eff",
+            "target_var": {
+              "context_val": "trait_id"
+            }
+          },
+          {
+            "set_string_var": "Requires Biomachine Physical potential",
+            "target_var": {
+              "context_val": "trait_requirement_description"
+            }
+          },
+          {
+            "set_condition": "perk_condition",
+            "condition": {
+              "u_has_trait": "PHYSICAL_POTENTIAL"
+            }
+          },
+          {
+            "set_string_var": "+10% Physical potential efficiency.",
+            "target_var": {
+              "context_val": "trait_additional_details"
+            }
+          }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT"
+      },
+      {
+        "condition": {
+          "not": {
+            "u_has_trait": "perk_mind_bio_eff"
+          }
+        },
+        "text": "Gain [<trait_name:perk_mind_bio_eff>]",
+        "effect": [
+          {
+            "set_string_var": "<trait_name:perk_mind_bio_eff>",
+            "target_var": {
+              "context_val": "trait_name"
+            }
+          },
+          {
+            "set_string_var": "<trait_description:perk_mind_bio_eff>",
+            "target_var": {
+              "context_val": "trait_description"
+            }
+          },
+          {
+            "set_string_var": "perk_mind_bio_eff",
+            "target_var": {
+              "context_val": "trait_id"
+            }
+          },
+          {
+            "set_string_var": "Requires Biomachine Mind potential",
+            "target_var": {
+              "context_val": "trait_requirement_description"
+            }
+          },
+          {
+            "set_condition": "perk_condition",
+            "condition": {
+              "u_has_trait": "MIND_POTENTIAL"
+            }
+          },
+          {
+            "set_string_var": "+10% Mind potential efficiency.",
+            "target_var": {
+              "context_val": "trait_additional_details"
+            }
+          }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT"
+      }
+    ]
+  }
+]

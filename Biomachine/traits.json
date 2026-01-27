@@ -1,0 +1,195 @@
+[
+  {
+    "type": "mutation",
+    "id": "STAMINA_POTENTIAL",
+    "name": {
+      "str": "Stamina potential"
+    },
+    "description": "It seems like after cataclysm your body stamina can grow forever with right training.",
+    "points": 10,
+    "starting_trait": true,
+    "valid": false,
+    "processed_eocs": [
+      "EOC_BIOMACHINE_TRAINING"
+    ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          {
+            "value": "MAX_STAMINA",
+            "add": {
+              "math": [
+                "u_stamina_potential_int / 1000"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "FOCUS_POTENTIAL",
+    "name": {
+      "str": "Focus potential"
+    },
+    "description": "It seems like after cataclysm your focus can grow forever with right training.",
+    "points": 10,
+    "starting_trait": true,
+    "valid": false,
+    "processed_eocs": [
+      "EOC_BIOMACHINE_TRAINING"
+    ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          {
+            "value": "LEARNING_FOCUS",
+            "add": {
+              "math": [
+                "u_focus_potential"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "PHYSICAL_POTENTIAL",
+    "name": {
+      "str": "Physical potential"
+    },
+    "description": "It seems like after cataclysm your body growing only stronger with right training.",
+    "points": 10,
+    "starting_trait": true,
+    "valid": false,
+    "processed_eocs": [
+      "EOC_BIOMACHINE_TRAINING"
+    ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          {
+            "value": "STRENGTH",
+            "add": {
+              "math": [
+                "u_phys_str_bonus"
+              ]
+            }
+          },
+          {
+            "value": "DEXTERITY",
+            "add": {
+              "math": [
+                "u_phys_dex_bonus"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "MIND_POTENTIAL",
+    "name": {
+      "str": "Mind potential"
+    },
+    "description": "It seems like after cataclysm your mind grows only stronger with the right training.",
+    "points": 10,
+    "starting_trait": true,
+    "valid": false,
+    "processed_eocs": [
+      "EOC_BIOMACHINE_TRAINING"
+    ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          {
+            "value": "INTELLIGENCE",
+            "add": {
+              "math": [
+                "u_mind_int_bonus"
+              ]
+            }
+          },
+          {
+            "value": "PERCEPTION",
+            "add": {
+              "math": [
+                "u_mind_per_bonus"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_stamina_bio_eff",
+    "name": {
+      "str": "Stamina efficiency grow"
+    },
+    "description": "Biomachine perk: Stamina potential training is 10% more efficient.",
+    "points": 0,
+    "purifiable": false,
+    "valid": false
+  },
+  {
+    "type": "mutation",
+    "id": "perk_focus_bio_eff",
+    "name": {
+      "str": "Focus efficiency grow"
+    },
+    "description": "Biomachine perk: Focus potential training is 10% more efficient.",
+    "points": 0,
+    "purifiable": false,
+    "valid": false
+  },
+  {
+    "type": "mutation",
+    "id": "perk_physical_bio_eff",
+    "name": {
+      "str": "Physical efficiency grow"
+    },
+    "description": "Biomachine perk: Physical potential training is 10% more efficient.",
+    "points": 0,
+    "purifiable": false,
+    "valid": false
+  },
+  {
+    "type": "mutation",
+    "id": "perk_mind_bio_eff",
+    "name": {
+      "str": "Mind efficiency grow"
+    },
+    "description": "Biomachine perk: Mind potential training is 10% more efficient.",
+    "points": 0,
+    "purifiable": false,
+    "valid": false
+  },
+  {
+    "type": "mutation",
+    "id": "BIOMACHINE_MENU",
+    "name": {
+      "str": "Biomachine Settings"
+    },
+    "description": "Opens the Biomachine configuration menu.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "active": true,
+    "starts_active": false,
+    "activated_eocs": [
+      "EOC_BIOMACHINE_OPEN_MENU"
+    ],
+    "player_display": true
+  }
+]

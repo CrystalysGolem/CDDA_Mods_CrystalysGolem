@@ -1,0 +1,617 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_SETTINGS",
+    "dynamic_line": "Biomachine settings. Choose efficiency multiplier and potential options.",
+    "responses": [
+      {
+        "text": "Set stamina efficiency multiplier",
+        "topic": "TALK_BIOMACHINE_MULT"
+      },
+      {
+        "text": "Physical potential: base coefficient",
+        "topic": "TALK_BIOMACHINE_PHYS_BASE"
+      },
+      {
+        "text": "Physical potential: rise coefficient",
+        "topic": "TALK_BIOMACHINE_PHYS_RISE"
+      },
+      {
+        "text": "Mind potential: base coefficient",
+        "topic": "TALK_BIOMACHINE_MIND_BASE"
+      },
+      {
+        "text": "Mind potential: rise coefficient",
+        "topic": "TALK_BIOMACHINE_MIND_RISE"
+      },
+      {
+        "text": "Show this dialog at game start: ON",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_show_dialog = 1"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_SETTINGS"
+      },
+      {
+        "text": "Show this dialog at game start: OFF",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_show_dialog = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_SETTINGS"
+      },
+      {
+        "text": "Close",
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MENU",
+    "dynamic_line": "Biomachine settings menu.",
+    "responses": [
+      {
+        "text": "Set stamina efficiency multiplier",
+        "topic": "TALK_BIOMACHINE_MULT"
+      },
+      {
+        "text": "Physical potential: choose STR/DEX gain",
+        "topic": "TALK_BIOMACHINE_PHYS_STAT"
+      },
+      {
+        "text": "Physical potential: base coefficient",
+        "topic": "TALK_BIOMACHINE_PHYS_BASE"
+      },
+      {
+        "text": "Physical potential: rise coefficient",
+        "topic": "TALK_BIOMACHINE_PHYS_RISE"
+      },
+      {
+        "text": "Mind potential: choose INT/PER gain",
+        "topic": "TALK_BIOMACHINE_MIND_STAT"
+      },
+      {
+        "text": "Mind potential: base coefficient",
+        "topic": "TALK_BIOMACHINE_MIND_BASE"
+      },
+      {
+        "text": "Mind potential: rise coefficient",
+        "topic": "TALK_BIOMACHINE_MIND_RISE"
+      },
+      {
+        "text": "Show this dialog at game start: ON",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_show_dialog = 1"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Show this dialog at game start: OFF",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_show_dialog = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Close",
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MULT",
+    "dynamic_line": "Select Biomachine stamina efficiency multiplier.",
+    "responses": [
+      {
+        "text": "4x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 4"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "2x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 2"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "1x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 1"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.5x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 0.5"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.25x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 0.25"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.01x",
+        "effect": [
+          {
+            "math": [
+              "u_biomachine_eff_mult = 0.01"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_PHYS_STAT",
+    "dynamic_line": "Choose which stat Physical potential will increase.",
+    "responses": [
+      {
+        "text": "Strength",
+        "effect": [
+          {
+            "math": [
+              "u_phys_target = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Dexterity",
+        "effect": [
+          {
+            "math": [
+              "u_phys_target = 1"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_PHYS_READY",
+    "dynamic_line": "Physical potential is ready. Choose which stat to increase.",
+    "responses": [
+      {
+        "text": "Gain Strength",
+        "effect": [
+          {
+            "run_eocs": "EOC_PHYSICAL_POTENTIAL_APPLY_STR"
+          }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Gain Dexterity",
+        "effect": [
+          {
+            "run_eocs": "EOC_PHYSICAL_POTENTIAL_APPLY_DEX"
+          }
+        ],
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MIND_READY",
+    "dynamic_line": "Mind potential is ready. Choose which stat to increase.",
+    "responses": [
+      {
+        "text": "Gain Intelligence",
+        "effect": [
+          {
+            "run_eocs": "EOC_MIND_POTENTIAL_APPLY_INT"
+          }
+        ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Gain Perception",
+        "effect": [
+          {
+            "run_eocs": "EOC_MIND_POTENTIAL_APPLY_PER"
+          }
+        ],
+        "topic": "TALK_DONE"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_PHYS_BASE",
+    "dynamic_line": "Select Physical potential base coefficient (applies to 1/100000 rate).",
+    "responses": [
+      {
+        "text": "100x",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 100000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "4x",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 4000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "2x",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 2000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.5x",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 500"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.25x",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_base_scaled = 250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_PHYS_RISE",
+    "dynamic_line": "Select Physical potential coefficient rise per stat point.",
+    "responses": [
+      {
+        "text": "3",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 3000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "2",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 2000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "1.25",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 1250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.75",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 750"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.5",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 500"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.25",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0",
+        "effect": [
+          {
+            "math": [
+              "u_phys_coeff_rise_scaled = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MIND_STAT",
+    "dynamic_line": "Choose which stat Mind potential will increase.",
+    "responses": [
+      {
+        "text": "Intelligence",
+        "effect": [
+          {
+            "math": [
+              "u_mind_target = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Perception",
+        "effect": [
+          {
+            "math": [
+              "u_mind_target = 1"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MIND_BASE",
+    "dynamic_line": "Select Mind potential base coefficient (applies to 1/100000 focus rate).",
+    "responses": [
+      {
+        "text": "100x",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 100000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "4x",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 4000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "2x",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 2000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.5x",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 500"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.25x",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_base_scaled = 250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIOMACHINE_MIND_RISE",
+    "dynamic_line": "Select Mind potential coefficient rise per stat point.",
+    "responses": [
+      {
+        "text": "3",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 3000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "2",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 2000"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "1.25",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 1250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.75",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 750"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.5",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 500"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0.25",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 250"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "0",
+        "effect": [
+          {
+            "math": [
+              "u_mind_coeff_rise_scaled = 0"
+            ]
+          }
+        ],
+        "topic": "TALK_BIOMACHINE_MENU"
+      },
+      {
+        "text": "Back",
+        "topic": "TALK_BIOMACHINE_MENU"
+      }
+    ]
+  }
+]

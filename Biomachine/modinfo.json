@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "biomachine",
+    "name": "Biomachine",
+    "authors": [ "Sunshine" ],
+    "description": "Add some traits to break the limits.",
+    "category": "misc_additions",
+    "dependencies": [ "dda" ]
+  }
+]
