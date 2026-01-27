@@ -20,7 +20,7 @@
             "value": "MAX_STAMINA",
             "add": {
               "math": [
-                "u_stamina_potential_int / 1000"
+                "u_stamina_potential_int / 10000"
               ]
             }
           }

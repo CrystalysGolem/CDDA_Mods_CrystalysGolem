@@ -400,11 +400,11 @@
         "topic": "TALK_BIOMACHINE_MENU"
       },
       {
-        "text": "0.25",
+        "text": "0.1",
         "effect": [
           {
             "math": [
-              "u_phys_coeff_rise_scaled = 250"
+              "u_phys_coeff_rise_scaled = 100"
             ]
           }
         ],
@@ -587,11 +587,11 @@
         "topic": "TALK_BIOMACHINE_MENU"
       },
       {
-        "text": "0.25",
+        "text": "0.1",
         "effect": [
           {
             "math": [
-              "u_mind_coeff_rise_scaled = 250"
+              "u_mind_coeff_rise_scaled = 100"
             ]
           }
         ],

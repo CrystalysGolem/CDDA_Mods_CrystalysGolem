@@ -34,7 +34,7 @@
         "then": [
           {
             "math": [
-              "u_stam_gain = u_stamina_spent * u_biomachine_eff_mult * 50"
+              "u_stam_gain = u_stamina_spent * u_biomachine_eff_mult"
             ]
           },
           {
@@ -63,7 +63,7 @@
         "then": [
           {
             "math": [
-              "u_focus_gain = (u_focus_spent / 100) * u_biomachine_eff_mult"
+              "u_focus_gain = (u_focus_spent / 1000) * u_biomachine_eff_mult"
             ]
           },
           {
@@ -97,7 +97,25 @@
           },
           {
             "math": [
-              "u_phys_gain = u_stamina_spent * u_phys_coeff_base_scaled * pow(1 + (u_phys_coeff_rise_scaled/1000), u_phys_stage)"
+              "u_phys_real_coeff = 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_stage_counter = u_phys_stage"
+            ]
+          },
+          {
+            "run_eocs": "EOC_PHYSICAL_STAGE_LOOP"
+          },
+          {
+            "math": [
+              "u_phys_gain = u_stamina_spent * u_phys_coeff_base_scaled * 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_phys_gain = u_phys_gain / u_phys_real_coeff"
             ]
           },
           {
@@ -134,7 +152,25 @@
           },
           {
             "math": [
-              "u_mind_gain = u_focus_spent * u_mind_coeff_base_scaled * pow(1 + (u_mind_coeff_rise_scaled/1000), u_mind_stage)"
+              "u_mind_real_coeff = 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_stage_counter = u_mind_stage"
+            ]
+          },
+          {
+            "run_eocs": "EOC_MIND_STAGE_LOOP"
+          },
+          {
+            "math": [
+              "u_mind_gain = u_focus_spent * u_mind_coeff_base_scaled * 1000"
+            ]
+          },
+          {
+            "math": [
+              "u_mind_gain = u_mind_gain / u_mind_real_coeff"
             ]
           },
           {
@@ -270,7 +306,7 @@
       "and": [
         {
           "math": [
-            "u_mind_progress_int >= 100000000"
+            "u_mind_progress_int >= 10000000"
           ]
         },
         {
@@ -304,7 +340,7 @@
       },
       {
         "math": [
-          "u_mind_progress_int -= 100000000"
+          "u_mind_progress_int -= 10000000"
         ]
       },
       {
@@ -329,7 +365,7 @@
       },
       {
         "math": [
-          "u_mind_progress_int -= 100000000"
+          "u_mind_progress_int -= 10000000"
         ]
       },
       {
@@ -408,7 +444,7 @@
           },
           {
             "math": [
-              "u_phys_coeff_rise_scaled = 330"
+              "u_phys_coeff_rise_scaled = 100"
             ]
           },
           {
@@ -457,7 +493,7 @@
           },
           {
             "math": [
-              "u_mind_coeff_rise_scaled = 330"
+              "u_mind_coeff_rise_scaled = 100"
             ]
           },
           {
@@ -533,6 +569,54 @@
         "open_dialogue": {
           "topic": "TALK_BIOMACHINE_MENU"
         }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_PHYSICAL_STAGE_LOOP",
+    "condition": {
+      "math": [
+        "u_phys_stage_counter > 0"
+      ]
+    },
+    "effect": [
+      {
+        "math": [
+          "u_phys_real_coeff = (u_phys_real_coeff * (1000 + u_phys_coeff_rise_scaled)) / 1000"
+        ]
+      },
+      {
+        "math": [
+          "u_phys_stage_counter -= 1"
+        ]
+      },
+      {
+        "run_eocs": "EOC_PHYSICAL_STAGE_LOOP"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MIND_STAGE_LOOP",
+    "condition": {
+      "math": [
+        "u_mind_stage_counter > 0"
+      ]
+    },
+    "effect": [
+      {
+        "math": [
+          "u_mind_real_coeff = (u_mind_real_coeff * (1000 + u_mind_coeff_rise_scaled)) / 1000"
+        ]
+      },
+      {
+        "math": [
+          "u_mind_stage_counter -= 1"
+        ]
+      },
+      {
+        "run_eocs": "EOC_MIND_STAGE_LOOP"
       }
     ]
   }
