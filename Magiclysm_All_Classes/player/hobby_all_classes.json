@@ -1,0 +1,23 @@
+[
+  {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "hobby_magiclysm_all_classes",
+    "name": "Master of All Arts (All Base Classes)",
+    "description": "Through fate, dedication, or dimensional anomaly, you have opened all eight traditions of spellcraft. Magus, Animist, Kelvinist, Stormshaper, Technomancer, Earthshaper, Biomancer, and Druid—every path is open to you.",
+    "points": 16,
+    "spells": [
+      { "id": "create_rune_magus", "level": 0 },
+      { "id": "create_rune_animist", "level": 0 },
+      { "id": "create_rune_kelvinist", "level": 0 },
+      { "id": "create_rune_stormshaper", "level": 0 },
+      { "id": "create_rune_technomancer", "level": 0 },
+      { "id": "create_rune_earthshaper", "level": 0 },
+      { "id": "create_rune_biomancer", "level": 0 },
+      { "id": "create_rune_druid", "level": 0 }
+    ],
+    "traits": ["MAGUS", "ANIMIST", "KELVINIST", "STORMSHAPER", "TECHNOMANCER", "EARTHSHAPER", "BIOMANCER", "DRUID"],
+    "skills": [{ "level": 2, "name": "spellcraft" }],
+    "chargen_allow_npc": false
+  }
+]

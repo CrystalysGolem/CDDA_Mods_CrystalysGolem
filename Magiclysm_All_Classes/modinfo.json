@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magiclysm_all_classes",
+    "name": "Magiclysm - All Classes",
+    "authors": ["Community"],
+    "maintainers": [],
+    "description": "Removes mutual exclusion between Magiclysm spellcasting classes and attunements. Allows having Magus, Animist, Kelvinist, Stormshaper, Technomancer, Earthshaper, Biomancer, Druid, and all attunements simultaneously. Requires Magiclysm.",
+    "category": "rebalance",
+    "dependencies": ["dda", "magiclysm"]
+  }
+]
