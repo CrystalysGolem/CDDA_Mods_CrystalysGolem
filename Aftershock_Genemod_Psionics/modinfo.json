@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "aftershock_genemod_psionics",
+    "name": "Aftershock: Genemods + Psionics",
+    "authors": [ "Community" ],
+    "maintainers": [],
+    "description": "Removes the incompatibility between genetic modifications (genemods) and psionic abilities (esper) in Aftershock: Exoplanet. Allows espers to use gene clinics and vice versa.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "aftershock_exoplanet" ]
+  }
+]

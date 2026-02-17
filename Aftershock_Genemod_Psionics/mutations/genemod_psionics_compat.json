@@ -1,0 +1,44 @@
+[
+  {
+    "type": "mutation",
+    "id": "AFS_PHYSICAL_CAPABILITY_GENEMOD",
+    "copy-from": "AFS_PHYSICAL_CAPABILITY_GENEMOD",
+    "cancels": [ "MYOPIC", "HYPEROPIC", "BADHEARING" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AFS_MENTAL_CAPABILITY_GENEMOD",
+    "copy-from": "AFS_MENTAL_CAPABILITY_GENEMOD",
+    "cancels": [ "FORGETFUL" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AFS_HEALTH_CAPABILITY_GENEMOD",
+    "copy-from": "AFS_HEALTH_CAPABILITY_GENEMOD",
+    "cancels": [ "SLOWHEALER", "SLOWHEALER2", "SLOWHEALER3" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AFS_RECOVERY_CAPABILITY_GENEMOD",
+    "copy-from": "AFS_RECOVERY_CAPABILITY_GENEMOD",
+    "cancels": [ "SLEEPY", "SLEEPY2" ]
+  },
+  {
+    "type": "mutation",
+    "id": "AFS_BEAUTY_GENEMOD",
+    "copy-from": "AFS_BEAUTY_GENEMOD",
+    "cancels": [ "UGLY", "DEFORMED", "DEFORMED2" ]
+  },
+  {
+    "type": "mutation",
+    "id": "ESPER_ADVANCEMENT_OKAY",
+    "copy-from": "ESPER_ADVANCEMENT_OKAY",
+    "cancels": []
+  },
+  {
+    "type": "mutation",
+    "id": "ESPER_STARTER_ADVANCEMENT_OKAY",
+    "copy-from": "ESPER_STARTER_ADVANCEMENT_OKAY",
+    "cancels": []
+  }
+]

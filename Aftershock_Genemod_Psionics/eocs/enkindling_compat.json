@@ -1,0 +1,126 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AFS_GEIST_ENKINDLING_RESULTS",
+    "eoc_type": "EVENT",
+    "required_event": "character_loses_effect",
+    "condition": { "and": [ { "compare_string": [ "effect_afs_esper_tincture_geist", { "context_val": "effect" } ] } ] },
+    "effect": [
+      {
+        "if": { "u_has_any_trait": [ "ESPER", "CANNOT_GAIN_PSIONICS" ] },
+        "then": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ],
+        "else": [
+          { "math": [ "_random_enkindling_value = rng(5,15)" ] },
+          {
+            "if": {
+              "or": [
+                { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" },
+                {
+                  "and": [
+                    { "not": { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" } },
+                    { "x_in_y_chance": { "x": { "math": [ "_random_enkindling_value" ] }, "y": 100 } }
+                  ]
+                }
+              ]
+            },
+            "then": [ { "run_eocs": [ "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_MESSAGE", "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_GEIST" ] } ],
+            "else": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AFS_SPARK_ENKINDLING_RESULTS",
+    "eoc_type": "EVENT",
+    "required_event": "character_loses_effect",
+    "condition": { "and": [ { "compare_string": [ "effect_afs_esper_tincture_spark", { "context_val": "effect" } ] } ] },
+    "effect": [
+      {
+        "if": { "u_has_any_trait": [ "ESPER", "CANNOT_GAIN_PSIONICS" ] },
+        "then": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ],
+        "else": [
+          { "math": [ "_random_enkindling_value = rng(5,15)" ] },
+          {
+            "if": {
+              "or": [
+                { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" },
+                {
+                  "and": [
+                    { "not": { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" } },
+                    { "x_in_y_chance": { "x": { "math": [ "_random_enkindling_value" ] }, "y": 100 } }
+                  ]
+                }
+              ]
+            },
+            "then": [ { "run_eocs": [ "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_MESSAGE", "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_SPARK" ] } ],
+            "else": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AFS_SYBIL_ENKINDLING_RESULTS",
+    "eoc_type": "EVENT",
+    "required_event": "character_loses_effect",
+    "condition": { "and": [ { "compare_string": [ "effect_afs_esper_tincture_sybil", { "context_val": "effect" } ] } ] },
+    "effect": [
+      {
+        "if": { "u_has_any_trait": [ "ESPER", "CANNOT_GAIN_PSIONICS" ] },
+        "then": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ],
+        "else": [
+          { "math": [ "_random_enkindling_value = rng(5,15)" ] },
+          {
+            "if": {
+              "or": [
+                { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" },
+                {
+                  "and": [
+                    { "not": { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" } },
+                    { "x_in_y_chance": { "x": { "math": [ "_random_enkindling_value" ] }, "y": 100 } }
+                  ]
+                }
+              ]
+            },
+            "then": [ { "run_eocs": [ "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_MESSAGE", "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_SYBIL" ] } ],
+            "else": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AFS_WHISPER_ENKINDLING_RESULTS",
+    "eoc_type": "EVENT",
+    "required_event": "character_loses_effect",
+    "condition": { "and": [ { "compare_string": [ "effect_afs_esper_tincture_whisper", { "context_val": "effect" } ] } ] },
+    "effect": [
+      {
+        "if": { "u_has_any_trait": [ "ESPER", "CANNOT_GAIN_PSIONICS" ] },
+        "then": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ],
+        "else": [
+          { "math": [ "_random_enkindling_value = rng(5,15)" ] },
+          {
+            "if": {
+              "or": [
+                { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" },
+                {
+                  "and": [
+                    { "not": { "u_has_trait": "ESPER_ADVANCEMENT_OKAY" } },
+                    { "x_in_y_chance": { "x": { "math": [ "_random_enkindling_value" ] }, "y": 100 } }
+                  ]
+                }
+              ]
+            },
+            "then": [ { "run_eocs": [ "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_MESSAGE", "EOC_AFS_ENKINDLING_TINCTURE_SUCCESS_WHISPER" ] } ],
+            "else": [ { "run_eocs": "EOC_AFS_ENKINDLING_TINCTURE_FAILURE_MESSAGE" } ]
+          }
+        ]
+      }
+    ]
+  }
+]
