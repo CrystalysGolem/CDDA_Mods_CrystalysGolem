@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "aftershock_no_bionic_slots",
+    "name": "Aftershock: No Bionic Slots",
+    "authors": [ "Community" ],
+    "maintainers": [],
+    "description": "Disables the bionic slots system when playing with Aftershock: Exoplanet. Allows installing any number of CBMs in each body part without slot limits.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "aftershock_exoplanet" ]
+  }
+]
