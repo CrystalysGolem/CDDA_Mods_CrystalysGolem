@@ -14,24 +14,31 @@
     "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 2 } ] }
   },
   {
-    "id": "lab",
+    "id": "SUS_junk_drawer",
     "type": "item_group",
-    "subtype": "distribution",
-    "copy-from": "lab",
-    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 3 } ] }
+    "subtype": "collection",
+    "copy-from": "SUS_junk_drawer",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 1 } ] }
   },
   {
-    "id": "lab_storage",
+    "id": "SUS_junk_drawer_messy",
     "type": "item_group",
-    "subtype": "distribution",
-    "copy-from": "lab_storage",
-    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 5 } ] }
+    "subtype": "collection",
+    "copy-from": "SUS_junk_drawer_messy",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 1 } ] }
   },
   {
-    "id": "museum_exhibit",
+    "id": "SUS_office_filing_cabinet",
+    "type": "item_group",
+    "subtype": "collection",
+    "copy-from": "SUS_office_filing_cabinet",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 2 } ] }
+  },
+  {
+    "id": "homebooks",
     "type": "item_group",
     "subtype": "distribution",
-    "copy-from": "museum_exhibit",
+    "copy-from": "homebooks",
     "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 1 } ] }
   }
 ]
