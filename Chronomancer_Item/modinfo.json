@@ -1,0 +1,16 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "chronomancer_item",
+    "name": "Chronomancer Catalyst",
+    "authors": [
+      "CrystalysGolem"
+    ],
+    "description": "Adds a rare item that transforms the user into a full Xedra Chronomancer package.",
+    "category": "items",
+    "dependencies": [
+      "dda",
+      "xedra_evolved"
+    ]
+  }
+]

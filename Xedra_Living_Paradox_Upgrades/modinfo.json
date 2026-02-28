@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "xedra_living_paradox_upgrades",
+    "name": "Xedra Living Paradox - Insight Upgrades",
+    "authors": ["CrystalysGolem"],
+    "maintainers": [],
+    "description": "Adds purchasable upgrades via insight for Xedra Living Paradox chronomancers",
+    "category": "content",
+    "dependencies": ["dda", "xedra_evolved"]
+  }
+]

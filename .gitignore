@@ -1,0 +1,17 @@
+# Игнорировать все папки модов по умолчанию
+*/
+
+# Разрешить только моды CrystalysGolem
+!Aftershock_Genemod_Psionics/
+!Aftershock_No_Bionic_Slots/
+!Chronomancer_Item/
+!Magiclysm_All_Classes/
+!Magiclysm_No_Bionic_Mana_Penalty/
+!Max_Stats_200/
+!MOM_Psychic_Knack_Fix/
+!Xedra_All_Classes/
+!Xedra_Living_Paradox_Upgrades/
+
+# Игнорировать файлы конфигурации и прочее
+default.json
+folder_info.txt

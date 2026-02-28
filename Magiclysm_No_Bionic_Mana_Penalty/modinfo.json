@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magiclysm_no_bionic_mana_penalty",
+    "name": "Magiclysm - No Bionic Mana Penalty",
+    "authors": ["CrystalysGolem"],
+    "maintainers": [],
+    "description": "Adds a trait that removes the reduction of maximum mana from stored bionic power. Requires Magiclysm. Take the trait at character creation or via debug to have bionic energy no longer lower your max mana.",
+    "category": "rebalance",
+    "dependencies": ["dda", "magiclysm"]
+  }
+]
