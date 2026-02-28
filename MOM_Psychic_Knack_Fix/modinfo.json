@@ -6,6 +6,6 @@
     "authors": ["User"],
     "description": "Removes the awakening chance penalty from Psychic Knacks. Psychic Knacks no longer reduce your chance to awaken new psionic powers.",
     "category": "mods",
-    "dependencies": ["MindOverMatter"]
+    "dependencies": ["mindovermatter"]
   }
 ]
