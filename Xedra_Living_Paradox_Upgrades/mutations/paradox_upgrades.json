@@ -1,0 +1,41 @@
+[
+  {
+    "type": "mutation",
+    "id": "XEDRA_SLEEP_ACCEL_1",
+    "prereqs": ["XEDRA_CHRONOMANCER"],
+    "name": "Sleep Acceleration I",
+    "description": "Your temporal awareness lets you optimize rest. Sleep time needed reduced by 10%.",
+    "points": 0,
+    "starting_trait": false,
+    "purifiable": false,
+    "valid": false,
+    "player_display": true,
+    "enchantments": [{ "condition": "ALWAYS", "values": [{ "value": "SLEEPY", "add": -10 }] }]
+  },
+  {
+    "type": "mutation",
+    "id": "XEDRA_SLEEP_ACCEL_2",
+    "name": "Sleep Acceleration II",
+    "description": "Deeper temporal attunement further optimizes rest. Sleep time needed reduced by 20% total.",
+    "points": 0,
+    "starting_trait": false,
+    "purifiable": false,
+    "valid": false,
+    "player_display": true,
+    "prereqs": ["XEDRA_SLEEP_ACCEL_1"],
+    "enchantments": [{ "condition": "ALWAYS", "values": [{ "value": "SLEEPY", "add": -10 }] }]
+  },
+  {
+    "type": "mutation",
+    "id": "XEDRA_SLEEP_ACCEL_3",
+    "name": "Sleep Acceleration III",
+    "description": "Mastery of temporal rest cycles. Sleep time needed reduced by 30% total.",
+    "points": 0,
+    "starting_trait": false,
+    "purifiable": false,
+    "valid": false,
+    "player_display": true,
+    "prereqs": ["XEDRA_SLEEP_ACCEL_2"],
+    "enchantments": [{ "condition": "ALWAYS", "values": [{ "value": "SLEEPY", "add": -10 }] }]
+  }
+]

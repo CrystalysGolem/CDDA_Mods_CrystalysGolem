@@ -1,0 +1,166 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_CHRONOMANCER_MAIN_OR_UPGRADES",
+    "dynamic_line": "As a chronomancer, you can spend insight to improve your abilities.\n\nCurrent Insight: <u_val:xedra_chronomancer_insight_count>",
+    "responses": [
+      { "text": "Spend Insight (spells & powers).", "topic": "TALK_CHRONOMANCER_INSIGHT_MENU_MAIN" },
+      { "text": "Paradox Upgrades.", "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_XEDRA_PARADOX_UPGRADES_MAIN",
+    "dynamic_line": "Paradox Upgrades — Improve your Living Paradox through insight.\n\nCurrent Insight: <u_val:xedra_chronomancer_insight_count>",
+    "responses": [
+      {
+        "condition": { "math": [ "u_has_trait('XEDRA_SLEEP_ACCEL_3')" ] },
+        "text": "Sleep Acceleration: Maxed (Level 3)",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN"
+      },
+      {
+        "condition": { "math": [ "!u_has_trait('XEDRA_SLEEP_ACCEL_1')" ] },
+        "text": "Sleep Acceleration Level 1 (100 Insight) — Reduce sleep time by 10%",
+        "topic": "TALK_XEDRA_PURCHASE_SLEEP_1"
+      },
+      {
+        "condition": {
+          "and": [
+            { "math": [ "u_has_trait('XEDRA_SLEEP_ACCEL_1')" ] },
+            { "math": [ "!u_has_trait('XEDRA_SLEEP_ACCEL_2')" ] }
+          ]
+        },
+        "text": "Sleep Acceleration Level 2 (200 Insight) — Reduce sleep time by 20% total",
+        "topic": "TALK_XEDRA_PURCHASE_SLEEP_2"
+      },
+      {
+        "condition": {
+          "and": [
+            { "math": [ "u_has_trait('XEDRA_SLEEP_ACCEL_2')" ] },
+            { "math": [ "!u_has_trait('XEDRA_SLEEP_ACCEL_3')" ] }
+          ]
+        },
+        "text": "Sleep Acceleration Level 3 (300 Insight) — Reduce sleep time by 30% total",
+        "topic": "TALK_XEDRA_PURCHASE_SLEEP_3"
+      },
+      {
+        "text": "Insight Grip (extend insight-from-kills duration 100% per level)",
+        "effect": [
+          {
+            "math": [
+              "u_chronomancer_menu_insight_cost = 100 + 100 * u_val('xedra_insight_grip_level')"
+            ]
+          },
+          {
+            "set_string_var": "Insight Grip",
+            "target_var": { "context_val": "chronomancer_menu_choice_name" }
+          },
+          {
+            "set_string_var": "Increases time to gain insight from kills by 100% per level. Max level = Intelligence.",
+            "target_var": { "context_val": "chronomancer_menu_choice_description" }
+          },
+          {
+            "set_string_var": "xedra_insight_grip",
+            "target_var": { "context_val": "chronomancer_menu_choice_id" }
+          },
+          {
+            "set_string_var": "Requires <u_val:chronomancer_menu_insight_cost> Insight. Max level = Intelligence (<u_val:intelligence>).",
+            "target_var": { "context_val": "chronomancer_menu_requirement_description" }
+          }
+        ],
+        "topic": "TALK_XEDRA_UPGRADE_PURCHASE_INSIGHT_GRIP"
+      },
+      { "text": "Go Back.", "topic": "TALK_CHRONOMANCER_MAIN_OR_UPGRADES" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_XEDRA_PURCHASE_SLEEP_1",
+    "dynamic_line": "Sleep Acceleration Level 1 — Reduces sleep time needed by 10%. Cost: 100 Insight.",
+    "responses": [
+      {
+        "text": "Purchase (100 Insight).",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN",
+        "condition": { "math": [ "u_vitamin('xedra_chronomancer_insight') >= 100" ] },
+        "effect": [
+          { "math": [ "u_vitamin('xedra_chronomancer_insight') -= 100" ] },
+          { "u_add_trait": "XEDRA_SLEEP_ACCEL_1" },
+          { "math": [ "u_xedra_chronomancer_insight_count=u_vitamin('xedra_chronomancer_insight')" ] },
+          { "u_message": "You unlock a deeper understanding of temporal rest!", "type": "good" }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_XEDRA_PURCHASE_SLEEP_2",
+    "dynamic_line": "Sleep Acceleration Level 2 — Reduces sleep time needed by 20% total. Cost: 200 Insight.",
+    "responses": [
+      {
+        "text": "Purchase (200 Insight).",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN",
+        "condition": { "math": [ "u_vitamin('xedra_chronomancer_insight') >= 200" ] },
+        "effect": [
+          { "math": [ "u_vitamin('xedra_chronomancer_insight') -= 200" ] },
+          { "u_add_trait": "XEDRA_SLEEP_ACCEL_2" },
+          { "math": [ "u_xedra_chronomancer_insight_count=u_vitamin('xedra_chronomancer_insight')" ] },
+          { "u_message": "You unlock a deeper understanding of temporal rest!", "type": "good" }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_XEDRA_PURCHASE_SLEEP_3",
+    "dynamic_line": "Sleep Acceleration Level 3 — Reduces sleep time needed by 30% total. Cost: 300 Insight.",
+    "responses": [
+      {
+        "text": "Purchase (300 Insight).",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN",
+        "condition": { "math": [ "u_vitamin('xedra_chronomancer_insight') >= 300" ] },
+        "effect": [
+          { "math": [ "u_vitamin('xedra_chronomancer_insight') -= 300" ] },
+          { "u_add_trait": "XEDRA_SLEEP_ACCEL_3" },
+          { "math": [ "u_xedra_chronomancer_insight_count=u_vitamin('xedra_chronomancer_insight')" ] },
+          { "u_message": "You unlock a deeper understanding of temporal rest!", "type": "good" }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_XEDRA_UPGRADE_PURCHASE_INSIGHT_GRIP",
+    "dynamic_line": "<context_val:chronomancer_menu_choice_name>: \"<context_val:chronomancer_menu_choice_description>\"\n<context_val:chronomancer_menu_requirement_description>.",
+    "responses": [
+      {
+        "text": "Purchase.",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN",
+        "condition": {
+          "and": [
+            { "math": [ "u_vitamin('xedra_chronomancer_insight') >= u_chronomancer_menu_insight_cost" ] },
+            { "math": [ "u_val('xedra_insight_grip_level') < u_val('intelligence')" ] }
+          ]
+        },
+        "effect": [
+          { "math": [ "u_vitamin('xedra_chronomancer_insight') -= u_chronomancer_menu_insight_cost" ] },
+          { "math": [ "u_val('xedra_insight_grip_level') += 1" ] },
+          { "math": [ "u_xedra_chronomancer_insight_count=u_vitamin('xedra_chronomancer_insight')" ] },
+          { "u_message": "Your grip on temporal echoes strengthens!", "type": "good" }
+        ]
+      },
+      {
+        "text": "Go Back.",
+        "topic": "TALK_XEDRA_PARADOX_UPGRADES_MAIN"
+      },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  }
+]
