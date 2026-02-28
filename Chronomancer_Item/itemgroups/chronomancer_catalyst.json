@@ -1,0 +1,37 @@
+[
+  {
+    "id": "xed_cubical_office",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "xed_cubical_office",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 2 } ] }
+  },
+  {
+    "id": "xed_office",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "xed_office",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 2 } ] }
+  },
+  {
+    "id": "lab",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "lab",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 3 } ] }
+  },
+  {
+    "id": "lab_storage",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "lab_storage",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 5 } ] }
+  },
+  {
+    "id": "museum_exhibit",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "museum_exhibit",
+    "extend": { "entries": [ { "item": "xedra_chronomancer_catalyst", "prob": 1 } ] }
+  }
+]

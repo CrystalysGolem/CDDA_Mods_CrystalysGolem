@@ -1,0 +1,33 @@
+[
+  {
+    "id": "xedra_chronomancer_catalyst",
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "temporal catalyst" },
+    "description": "Кажется, в этой капле, пытающейся принять форму часов, вы видите само время.",
+    "weight": "10 g",
+    "volume": "10 ml",
+    "price": "5000 USD",
+    "price_postapoc": "1000 USD",
+    "material": [ "forged_dreamstuff" ],
+    "symbol": "~",
+    "color": "light_blue",
+    "phase": "liquid",
+    "container": "vial_glass",
+    "comestible_type": "MED",
+    "category": "mutagen",
+    "flags": [ "NO_INGEST", "WATER_DISSOLVE" ],
+    "consumption_effect_on_conditions": [ "EOC_XEDRA_CHRONOMANCER_CATALYST" ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XEDRA_CHRONOMANCER_CATALYST",
+    "effect": [
+      { "u_message": "Время течёт сквозь вас, изменяя саму вашу природу...", "type": "mixed", "popup": true },
+      { "u_add_trait": "XEDRA_CHRONOMANCER" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_LOOPING_WOUND" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_UNSTABLE_POWERS" }
+    ]
+  }
+]
