@@ -17,7 +17,6 @@
       { "id": "create_rune_druid", "level": 0 }
     ],
     "traits": ["MAGUS", "ANIMIST", "KELVINIST", "STORMSHAPER", "TECHNOMANCER", "EARTHSHAPER", "BIOMANCER", "DRUID"],
-    "skills": [{ "level": 2, "name": "spellcraft" }],
-    "chargen_allow_npc": false
+    "skills": [{ "level": 2, "name": "spellcraft" }]
   }
 ]
