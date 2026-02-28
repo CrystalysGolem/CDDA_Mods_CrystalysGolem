@@ -1,0 +1,20 @@
+[
+  {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "hobby_xedra_all_classes",
+    "name": "Awakened All (Eater, Dreamer, Genius, Dreamsmith)",
+    "description": "The dimensional spillage has awakened every latent talent within you. You can eat the substance of dreams for power, summon entities from beyond, invent impossible devices, and forge dreamdross into lasting tools. All paths are open to you.",
+    "points": 12,
+    "spells": [
+      { "id": "spring_heeled_leap", "level": 4 },
+      { "id": "spell_dodge", "level": 4 },
+      { "id": "create_dream_dross", "level": 4 },
+      { "id": "summon_shifter", "level": 4 },
+      { "id": "spell_oneiric_hammer", "level": 0 }
+    ],
+    "traits": ["EATER", "DREAMER", "INVENTOR", "DREAMSMITH"],
+    "skills": [{ "level": 3, "name": "deduction" }],
+    "chargen_allow_npc": false
+  }
+]
