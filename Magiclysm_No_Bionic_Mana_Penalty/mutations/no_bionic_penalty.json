@@ -1,0 +1,20 @@
+[
+  {
+    "type": "mutation",
+    "id": "MAG_NO_BIONIC_MANA_PENALTY",
+    "name": { "str": "Mana-Bionic Decoupling" },
+    "points": 0,
+    "description": "Your mana pool is completely decoupled from your bionic power system. Bionics no longer reduce your maximum mana.",
+    "starting_trait": true,
+    "purifiable": false,
+    "valid": true,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "BIONIC_MANA_PENALTY", "multiply": 0 }
+        ]
+      }
+    ]
+  }
+]
