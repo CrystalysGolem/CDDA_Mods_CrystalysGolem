@@ -5,7 +5,7 @@
     "name": "Xedra Evolved - All Classes",
     "authors": ["CrystalysGolem"],
     "maintainers": [],
-    "description": "Removes the mutual exclusion between Xedra Evolved spellcasting classes. Allows characters to have Eater, Dreamer, Inventor, and Dreamsmith simultaneously. Requires Xedra Evolved.",
+    "description": "Removes the mutual exclusion between Xedra Evolved spellcasting classes.  Allows characters to have Eater, Dreamer, Inventor, and Dreamsmith simultaneously.  Requires Xedra Evolved.",
     "category": "rebalance",
     "dependencies": ["dda", "xedra_evolved"]
   }

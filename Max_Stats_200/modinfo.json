@@ -5,7 +5,7 @@
     "name": "Maximum Stats 200",
     "authors": ["CrystalysGolem"],
     "maintainers": [],
-    "description": "Raises the cap on maximum effective character stats (Strength, Dexterity, Intelligence, Perception) to 200. If using Magiclysm or Xedra Evolved, place this mod after them in your mod list to override their default stat caps.",
+    "description": "Raises the cap on maximum effective character stats (Strength, Dexterity, Intelligence, Perception) to 200.  Only effective on builds where the PLAYER_MAX_STR_VALUE / DEX / PER / INT external options exist (CDDA 0.I experimental builds through early 2026, and builds after October 2026).  On builds without stat caps the mod is a harmless no-op.  If using Magiclysm or Xedra Evolved, place this mod after them in your mod list to override their stat caps.",
     "category": "rebalance",
     "dependencies": ["dda"]
   },

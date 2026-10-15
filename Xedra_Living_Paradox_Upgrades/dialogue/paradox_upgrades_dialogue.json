@@ -57,7 +57,7 @@
             "target_var": { "context_val": "chronomancer_menu_choice_name" }
           },
           {
-            "set_string_var": "Increases time to gain insight from kills by 100% per level. Max level = Intelligence.",
+            "set_string_var": "Increases time to gain insight from kills by 100% per level.  Max level = Intelligence.",
             "target_var": { "context_val": "chronomancer_menu_choice_description" }
           },
           {
@@ -65,7 +65,7 @@
             "target_var": { "context_val": "chronomancer_menu_choice_id" }
           },
           {
-            "set_string_var": "Requires <u_val:chronomancer_menu_insight_cost> Insight. Max level = Intelligence (<u_val:intelligence>).",
+            "set_string_var": "Requires <u_val:chronomancer_menu_insight_cost> Insight.  Max level = Intelligence (<u_val:intelligence>).",
             "target_var": { "context_val": "chronomancer_menu_requirement_description" }
           }
         ],
