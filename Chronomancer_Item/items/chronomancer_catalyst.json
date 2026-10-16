@@ -24,7 +24,7 @@
     "type": "effect_on_condition",
     "id": "EOC_XEDRA_CHRONOMANCER_CATALYST",
     "effect": [
-      { "u_message": "Время течёт сквозь вас, изменяя саму вашу природу...", "type": "mixed", "popup": true },
+      { "u_message": "Время течёт сквозь вас, изменяя саму вашу природу…", "type": "mixed", "popup": true },
       { "u_add_trait": "XEDRA_CHRONOMANCER" },
       { "u_add_trait": "XEDRA_CHRONOMANCER_LOOPING_WOUND" },
       { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },

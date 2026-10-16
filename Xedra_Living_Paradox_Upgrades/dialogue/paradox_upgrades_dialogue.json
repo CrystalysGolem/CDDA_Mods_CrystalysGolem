@@ -98,7 +98,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_XEDRA_PURCHASE_SLEEP_2",
-    "dynamic_line": "Sleep Acceleration Level 2 — Reduces sleep time needed by 20% total. Cost: 200 Insight.",
+    "dynamic_line": "Sleep Acceleration Level 2 — Reduces sleep time needed by 20% total.  Cost: 200 Insight.",
     "responses": [
       {
         "text": "Purchase (200 Insight).",
@@ -118,7 +118,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_XEDRA_PURCHASE_SLEEP_3",
-    "dynamic_line": "Sleep Acceleration Level 3 — Reduces sleep time needed by 30% total. Cost: 300 Insight.",
+    "dynamic_line": "Sleep Acceleration Level 3 — Reduces sleep time needed by 30% total.  Cost: 300 Insight.",
     "responses": [
       {
         "text": "Purchase (300 Insight).",

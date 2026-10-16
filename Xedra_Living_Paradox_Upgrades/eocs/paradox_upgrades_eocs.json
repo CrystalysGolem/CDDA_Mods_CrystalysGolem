@@ -2,7 +2,6 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_XEDRA_CHRONOMANCER_OPEN_INSIGHT_MENU",
-    "eoc_type": "SCENE",
     "effect": [
       { "math": [ "u_xedra_chronomancer_insight_count=u_vitamin('xedra_chronomancer_insight')" ] },
       { "open_dialogue": { "topic": "TALK_CHRONOMANCER_MAIN_OR_UPGRADES" } }
